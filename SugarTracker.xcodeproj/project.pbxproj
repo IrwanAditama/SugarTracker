@@ -14,6 +14,8 @@
 		C43A5D932BF4C97D003D24B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43A5D922BF4C97D003D24B9 /* Assets.xcassets */; };
 		C43A5D962BF4C97D003D24B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43A5D952BF4C97D003D24B9 /* Preview Assets.xcassets */; };
 		C4D298262BFB7AC7004CE56E /* AccumulatedNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D298252BFB7AC7004CE56E /* AccumulatedNumbers.swift */; };
+		C4D45EB42BFC4F810050D579 /* Sugarmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D45EB32BFC4F810050D579 /* Sugarmodel.swift */; };
+		C4D45EB62BFD9A6E0050D579 /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D45EB52BFD9A6E0050D579 /* HealthViewModel.swift */; };
 		C4D559702BF4EFAD004A92A5 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D5596F2BF4EFAD004A92A5 /* ItemList.swift */; };
 		C4D559742BF50380004A92A5 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D559732BF50380004A92A5 /* Details.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,9 @@
 		C43A5D922BF4C97D003D24B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C43A5D952BF4C97D003D24B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C4D298252BFB7AC7004CE56E /* AccumulatedNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatedNumbers.swift; sourceTree = "<group>"; };
+		C4D45EB32BFC4F810050D579 /* Sugarmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sugarmodel.swift; sourceTree = "<group>"; };
+		C4D45EB52BFD9A6E0050D579 /* HealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
+		C4D45EB72BFD9B6C0050D579 /* SugarTracker Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SugarTracker Watch App.entitlements"; sourceTree = "<group>"; };
 		C4D5596F2BF4EFAD004A92A5 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
 		C4D559732BF50380004A92A5 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,11 +91,14 @@
 		C43A5D8D2BF4C97C003D24B9 /* SugarTracker Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				C4D45EB72BFD9B6C0050D579 /* SugarTracker Watch App.entitlements */,
 				C43A5D8E2BF4C97C003D24B9 /* SugarTrackerApp.swift */,
 				C43A5D902BF4C97C003D24B9 /* ContentView.swift */,
 				C4D5596F2BF4EFAD004A92A5 /* ItemList.swift */,
+				C4D45EB52BFD9A6E0050D579 /* HealthViewModel.swift */,
 				C4140F712BF5A3AD00B77F10 /* ProgressBar.swift */,
 				C4D559732BF50380004A92A5 /* Details.swift */,
+				C4D45EB32BFC4F810050D579 /* Sugarmodel.swift */,
 				C4D298252BFB7AC7004CE56E /* AccumulatedNumbers.swift */,
 				C43A5D922BF4C97D003D24B9 /* Assets.xcassets */,
 				C43A5D942BF4C97D003D24B9 /* Preview Content */,
@@ -206,7 +214,9 @@
 			files = (
 				C43A5D912BF4C97C003D24B9 /* ContentView.swift in Sources */,
 				C4D559742BF50380004A92A5 /* Details.swift in Sources */,
+				C4D45EB62BFD9A6E0050D579 /* HealthViewModel.swift in Sources */,
 				C4D559702BF4EFAD004A92A5 /* ItemList.swift in Sources */,
+				C4D45EB42BFC4F810050D579 /* Sugarmodel.swift in Sources */,
 				C4D298262BFB7AC7004CE56E /* AccumulatedNumbers.swift in Sources */,
 				C43A5D8F2BF4C97C003D24B9 /* SugarTrackerApp.swift in Sources */,
 				C4140F722BF5A3AD00B77F10 /* ProgressBar.swift in Sources */,
@@ -343,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SugarTracker Watch App/SugarTracker Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SugarTracker Watch App/Preview Content\"";
@@ -350,6 +361,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = SugarTracker;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = Share;
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = Update;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -373,6 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SugarTracker Watch App/SugarTracker Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SugarTracker Watch App/Preview Content\"";
@@ -380,6 +394,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = SugarTracker;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = Share;
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = Update;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (

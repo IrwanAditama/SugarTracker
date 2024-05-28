@@ -61,7 +61,7 @@ struct ItemList: View {
                         }
                     }
                 }
-                
+//                .navigationBarBackButtonHidden()
             }
         }
 

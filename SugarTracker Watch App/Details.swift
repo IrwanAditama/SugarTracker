@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Details: View {
     @State var sugarintake : Int = 0
     @EnvironmentObject var accumulatedNumbers: AccumulatedNumbers
+    @Environment(\.modelContext) var context
     
     var drink: Drink
     @Binding var shouldDismiss: Bool
@@ -100,7 +102,12 @@ struct Details: View {
                         Button(action: {
                             shouldDismiss = true
                             accumulatedNumbers.addNumber(sugarintake)
-                            dismiss()                            
+                            let currentDate: Date = .now
+                            let dateString: String = DateFormatter.shortDate.string(from: currentDate)
+                            context.insert(
+                                Sugarmodel(id: dateString, sugar: accumulatedNumbers.total))
+                            
+                            dismiss()
                         }, label: {
                             Text("Add")
                                 .font(.headline)
@@ -109,7 +116,8 @@ struct Details: View {
                         })
                         
                         .frame(width: 173, height: 36)
-                        .background(.purple)
+                        .background(Color(red: 0.48, green: 0.11, blue: 0.85))
+//                        .background(.purple)
                         .cornerRadius(20)
                     }
                 }
@@ -121,7 +129,15 @@ struct Details: View {
         }
     }
 }
-//
+
+extension DateFormatter{
+    static var shortDate : DateFormatter{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
+    }
+}
+
 //#Preview {
 //    Details(drink: Drink(name: "Bubble Tea", bgcolor: .purple .opacity(0.3), image: "bubbletea", sugar: 40))
 //        .environmentObject(AccumulatedNumbers())
